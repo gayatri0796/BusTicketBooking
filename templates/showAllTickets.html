@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+     background-color:rgb(207, 106, 207);
+    }
+</style>
+<body>
+     <p style="text-align: right;"><a href="/adminDashboard" > Go to AdminDashboard</a></p>
+    <center>
+
+        <h1>Show All Tickets..</h1>
+        <a href="/addTicket" >Add New Ticket</a>
+        <hr>
+        
+            <table border="1">
+             <tr>
+                <th>ticketid</th>
+                <th>ticketname</th>
+                 <th>price</th>
+                 <th>Source</th>
+                  <th>destination</th>
+                   <th>image_url</th>
+                   <th>Date</th>
+                   <th>Time</th>
+                   <th>Category</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+             {%for tic in tics%}
+             <tr>
+                <td>{{tic[0]}}</td>
+                <td>{{tic[1]}}</td>
+                 <td>{{tic[2]}}</td>
+                 <td>{{tic[9]}}</td>
+                  <td>{{tic[3]}}</td>
+                   <td><img src="{{url_for('static',filename=tic[4])}}" 
+                    height="70px" width="70px"/></td>
+                    <td>{{tic[6]}}</td>
+                    <td>{{tic[7]}}</td>
+                    
+                    <td>{{tic[5]}}</td>
+
+
+                <td><a href="/editTicket/{{tic[0]}}"><button>Edit</button></a></td>
+                <td><a href="/deleteTicket/{{tic[0]}}"><button>Delete</button></a></td>
+
+            </tr>
+            {%endfor%}
+
+            </table>
+        
+    </center>
+</body>
+</html>

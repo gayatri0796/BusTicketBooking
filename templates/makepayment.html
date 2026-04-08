@@ -1,0 +1,79 @@
+{% extends "homepage.html" %}
+{% block content %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow rounded-4 border-0 p-4">
+        <h2 class="text-center text-primary mb-4">Make Payment</h2>
+
+        <!-- Ticket Summary Table -->
+        <div class="mb-4">
+          <h5 class="text-secondary mb-3">Ticket Summary</h5>
+          <table class="table table-bordered text-center align-middle">
+           
+            
+          </table>
+        </div>
+
+        <!-- Payment Form Table -->
+        <!-- <form method="post">
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="cardNumber" class="form-label">Card Number</label></td>
+              <td><input type="text" id="cardNumber" name="card_no" class="form-control" required></td>
+            </tr>
+            <tr>
+              <td><label for="cardName" class="form-label">Cardholder Name</label></td>
+             <td> <input type="text" id="cardholder_name" name="cardholder_name" class="form-control" required></td>
+            </tr>
+            <tr>
+              <td><label for="cvv" class="form-label">CVV</label></td>
+              <td><input type="text" id="cvv" name="cvv" class="form-control" required></td>
+            </tr>
+            <tr>
+              <td><label for="expiryDate" class="form-label">Expiry Date</label></td>
+              <td><input type="text" id="expiryDate" name="expiry" class="form-control" required></td>
+            </tr>
+            <tr>
+              <td><strong>Total Amount To Pay</strong></td>
+              <td><input type="text" name="amount" class="form-control fw-bold text-success" value="{{ session['total'] }}" readonly></td>
+            </tr>
+          </table> -->
+
+          <!-- <div class="text-end mt-3">
+            <button type="submit" class="btn btn-success btn-lg px-4">
+              <i class="bi bi-credit-card-fill me-2"></i> Proceed To Pay
+            </button>
+          </div> -->
+          <!-- <div class="text-end mt-3">
+<a href="/paymentSuccess" class="btn btn-success btn-lg">
+  <i class="bi bi-credit-card-fill me-2"></i> Proceed To Pay
+</a> -->
+
+<!-- <a href="{{ url_for('paymentSuccess') }}" class="btn btn-success btn-lg px-4">
+  <i class="bi bi-credit-card-fill me-2"></i> Proceed To Pay
+</a>
+
+          </div>
+        </form> -->
+        <form method="post" action="/makepayment">
+  <label>Card Number:</label>
+  <input type="text" name="card_no" required class="form-control">
+
+  <label>CVV:</label>
+  <input type="password" name="cvv" required class="form-control">
+
+  <label>Expiry:</label>
+  <input type="text" name="expiry" placeholder="MM/YYYY" required class="form-control">
+
+  <button type="submit" class="btn btn-success mt-3">Confirm Payment</button>
+</form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

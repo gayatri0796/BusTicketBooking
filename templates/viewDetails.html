@@ -1,0 +1,89 @@
+{% extends "homepage.html" %}
+
+{% block content %}
+<well>
+
+<div class="container my-5">
+  <div class="card shadow-sm border-0 p-4" style="max-width: 700px; margin: auto; border-radius: 12px;">
+    <h3 class="text-center text-primary mb-4">Ticket Details</h3>
+    <div class="row g-4 align-items-center">
+      <div class="col-md-5 text-center">
+        
+        <img src="{{ url_for('static', filename=tic[4]) }}" class="img-fluid rounded border" style="height: 180px; width: 100%; object-fit: cover;" alt="Ticket Image">
+      </div>
+      <div class="col-md-7">
+        <form method="post">
+        <table class="table table-borderless mb-0">
+            <tr>
+              <th>Category:</th>
+              <td>{{tic[8]}}</td>
+            </tr>
+            <tr>
+            <th>Ticket Id:</th>
+            <td>{{ tic[0] }}
+              <input type="hidden" name="tid" value="{{tic[0]}}"/>
+            </td>
+          </tr>
+          <tr>
+            <th>Name:</th>
+            <td>{{ tic[1] }}</td>
+          </tr>
+          <tr>
+            <th>Price:</th>
+            <td>₹{{ tic[2] }}</td>
+          </tr>
+          <tr>
+            <tr>
+            <th>Source:</th>
+            <td>{{ tic[9]}}</td>
+          </tr>
+          <tr>
+            <th>Destination:</th>
+            <td>{{ tic[3] }}</td>
+          </tr>
+          <tr>
+            <th>Date:</th>
+            <td>{{ tic[6] }}</td>
+          </tr>
+          <tr>
+            <th>Time:</th>
+            <td>{{ tic[7] }}</td>
+          </tr>
+          <tr>
+            <th>No Of Tickets:</th>
+            <td>
+              <select name="qty" class="form-select form-select-sm" style="width: 80px;"> 
+               
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+               
+              </select>
+            </td>
+          </tr> 
+        </table>
+        
+      </div>
+    </div>
+
+    <!-- <div class="text-center mt-4">
+    <form method="post" action="{{ url_for('viewDetails', tid=tic[0], qty=tic[7]) }}">
+  <button type="submit" class="btn btn-success btn-sm mt-2">Add to Cart</button>
+</form>
+</div> -->
+<form method="post" action="{{ url_for('viewDetails', tid=tic[0]) }}">
+ 
+  <button type="submit" class="btn btn-success btn-sm mt-2">Add to Cart</button>
+</form>
+
+
+     
+  </div>
+</div>
+</form>
+</well>
+{% endblock %}

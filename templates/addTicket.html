@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+     background-color:rgb(122, 161, 175);
+    }
+</style>
+<body>
+    <center>
+        <h1>Add New Ticket..</h1>
+        <hr>
+        <form method="post" enctype="multipart/form-data">
+        <table border="1">
+            <tr>
+                <td>Enter Ticket Name</td>
+               <td><input type="text" name="tname" required/></td></tr>
+                 <tr><td>Price</td><td><input type="text" name="price" required/></td></tr>
+                 <tr><td>Source</td><td><input type="text" name="source" required/></td></tr>
+
+                  <tr><td>Destination</td><td><input type="text" name="destination" required/></td></tr>
+                  <tr> <td>Select Image</td><td><input type="file" name="image_url" required/></td></tr>
+                  <!-- <tr><td><label for="travel_date">Select Date:</label></td>
+                  <td> <input type="date" id="travel_date" name="travel_date" required></td></tr> -->
+
+                   <tr><td>Date</td><td><input type="text" name="tdate" required/></td></tr>
+                    <tr><td>Time</td><td><input type="text" name="ttime" required/></td></tr>
+
+                <tr><td>Select Category</td><td><select name="catid">
+                <!-- <tr><td>Date & Time</td><td><input type="text" name="date_time"/></td></tr> -->
+                    {%for cat in cats%}
+                    <option value="{{cat[0]}}">{{cat[1]}}</option> 
+                   
+                {%endfor%}
+            </select></td></tr>
+
+                 <tr><td><input type="submit" value="Add Ticket"/></td></tr>
+
+        </table>
+        </form>
+    </center>
+</body>
+</html>

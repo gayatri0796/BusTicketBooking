@@ -1,0 +1,24 @@
+{% extends "homepage.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background: linear-gradient(to right, #a7c2ec, #d4bde9);">
+  <div class="login-card bg-white p-4 shadow rounded" style="max-width: 400px; width: 100%;">
+    <h2 class="text-center mb-4">Login</h2>
+    <form method="post" action="/login">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control rounded-3" name="uname" placeholder="Enter your username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control rounded-3" name="pwd" placeholder="Enter your password" required>
+      </div>
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-primary rounded-3">Login</button>
+      </div>
+      <div class="text-center text-muted">
+        Don't have an account? <a href="/signup">Signup here</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

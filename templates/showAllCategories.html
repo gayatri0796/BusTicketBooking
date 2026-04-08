@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+     background-color:rgb(207, 106, 207);
+    }
+</style>
+<body>
+             <p style="text-align: right;"><a href="/adminDashboard" > Go to AdminDashboard</a></p>
+    <center>
+        <h1>Show All Categories..</h1>
+        <a href="/addCategory" >Add New Category</a>
+        <hr>
+        
+            <table border="1">
+             <tr>
+                <th>Catid</th>
+                <th>Catname</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+             {%for cat in cats%}
+             <tr>
+                <td>{{cat[0]}}</td>
+                <td>{{cat[1]}}</td>
+                <td><a href="/editCategory/{{cat[0]}}"><button>Edit</button></a></td>
+                <td><a href="/deleteCategory/{{cat[0]}}"><button>Delete</button></a></td>
+
+            </tr>
+            {%endfor%}
+
+            </table>
+        
+    </center>
+</body>
+</html>

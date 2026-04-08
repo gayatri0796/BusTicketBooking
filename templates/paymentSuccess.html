@@ -1,0 +1,17 @@
+{% extends "homepage.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-success">✅ Payment Successful</h2>
+  <p>Thank you! Your tickets have been Confirmed..</p>
+  <h3>Enjoy The Tour</h3>
+
+  <h4>Booking Summary:</h4>
+  <ul>
+    {% for item in items %}
+      <li>Ticket ID: {{ item.tid }} | Quantity: {{ item.qty }}</li>        
+    {% endfor %}
+  </ul>
+
+  <a href="/mybookings" class="btn btn-primary mt-4">View My Bookings</a>
+</div>
+{% endblock %}
